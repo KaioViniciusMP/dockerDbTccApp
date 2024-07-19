@@ -52,6 +52,17 @@ CREATE TABLE tabHistoricoTransacao(
 );
 GO
 
+CREATE TABLE tabLogExcecao (
+    codigo bigint primary key identity(1,1),
+    dataHora datetime,
+    referencia varchar(200),
+    excecao varchar(200)
+);
+GO
+
+INSERT tabUsuario VALUES ('KaioPereira','teste','Kaio')
+GO
+
 INSERT INTO tabModalidade (nomeModalidade) VALUES 
     ('Saúde'),
     ('Transporte'),
@@ -60,3 +71,16 @@ INSERT INTO tabModalidade (nomeModalidade) VALUES
     ('Lazer'),
     ('Compras'),
     ('Outra...');
+    GO
+
+INSERT tabContaCorrente VALUES ('Santander', 1, 500)
+GO
+
+INSERT tabCartao VALUES ('debito','2024-05-30T00:00:00','Nubank','123456789',1000, 1)
+GO
+
+INSERT tabHistoricoTransacao VALUES ('2024-07-16T21:13:27.587', 600, 'Pix', 1, 4, 'Primeiro Deposito', 'deposito teste', 1, '123456789', 1) 
+GO    
+
+INSERT tabLogExcecao VALUES('2024-07-16T21:13:27.587', 'NOME TELA - TESTE', 'PRIMARY EXCEPTION TEST')
+
